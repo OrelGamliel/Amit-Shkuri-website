@@ -11,14 +11,14 @@ export default function Hero() {
     <Section id="hero">
       <BgOverlay />
       <BgImage>
-        <Image
+        {/* <Image
           src="/images/hero.jpg"
           alt="טיפול שיאצו"
           fill
           priority
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           sizes="100vw"
-        />
+        /> */}
       </BgImage>
 
       <Content>

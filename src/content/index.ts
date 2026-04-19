@@ -11,8 +11,8 @@ export const siteContent = {
   },
 
   contact: {
-    name: 'עמית',
-    fullName: 'עמית כהן',
+    name: 'עמית שקורי',
+    fullName: 'עמית שקורי',
     phone: '052-478-0457',
     whatsappNumber: '972524780457', // format: 972 + number without leading 0
     location: 'רמת גן',
