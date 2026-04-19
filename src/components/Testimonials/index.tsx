@@ -26,7 +26,7 @@ export default function Testimonials() {
       </Header>
 
       <CarouselWrap>
-        <ArrowButton onClick={() => scroll('prev')} aria-label="הקודם">&#8250;</ArrowButton>
+        <ArrowButton onClick={() => scroll('next')} aria-label="הבא">&#8249;</ArrowButton>
 
         <Track ref={trackRef}>
           {testimonials.items.map((item, i) => (
@@ -38,7 +38,7 @@ export default function Testimonials() {
           ))}
         </Track>
 
-        <ArrowButton onClick={() => scroll('next')} aria-label="הבא">&#8249;</ArrowButton>
+        <ArrowButton onClick={() => scroll('prev')} aria-label="הקודם">&#8250;</ArrowButton>
       </CarouselWrap>
     </Section>
   );
@@ -76,7 +76,7 @@ const CarouselWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   max-width: 1300px;
   margin: 0 auto;
 `;
@@ -87,7 +87,7 @@ const Track = styled.div`
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 1rem 0.5rem 1.5rem;
+  padding: 1rem 1rem 1.5rem;
   flex: 1;
 
   /* hide scrollbar */
@@ -98,7 +98,7 @@ const Track = styled.div`
 `;
 
 const Card = styled.blockquote`
-  flex: 0 0 300px;
+  flex: 0 0 calc(85vw);
   scroll-snap-align: start;
   background: ${theme.colors.bgAlt};
   border-radius: ${theme.radii.lg};
@@ -153,10 +153,14 @@ const ArrowButton = styled.button`
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   transition: background 0.2s, color 0.2s;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    display: flex;
+  }
 
   &:hover {
     background: ${theme.colors.primary};
